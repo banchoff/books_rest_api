@@ -51,3 +51,11 @@ Thumbs.db
 .*swp
 *~
 
+
+# These are from the virtualenv:
+src/bin/*
+src/lib/*
+src/lib64
+src/pyvenv.cfg
+src/share/*
+
