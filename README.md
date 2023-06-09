@@ -1,29 +1,22 @@
-# README #
+# REST API - A demo #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+This is a small API REST for books, authors and editorials. This is just a demo, not ready for production.
 
-### What is this repository for? ###
+### Requirements ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+This is written in Pyhton with Django and Django REST Framework. For the database we use a Sqlite one.
 
-### How do I get set up? ###
+See **src/books/requirements.txt**.
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+### How to run it? ###
 
-### Contribution guidelines ###
 
-* Writing tests
-* Code review
-* Other guidelines
+For running directly with Django:
 
-### Who do I talk to? ###
+	source ./src/bin/activate
+	cd src/books/
+	python3 manage.py runserver
 
-* Repo owner or admin
-* Other community or team contact
+You can also run it with docker:
+
+
