@@ -19,6 +19,39 @@ For running directly with Django:
 
 You can also run it with docker:
 
+	docker build -t books-v01 .
+	docker run -it -p 8020:8020 \
+		-e DJANGO_SUPERUSER_USERNAME=root \
+		-e DJANGO_SUPERUSER_PASSWORD=mypassword \
+		-e DJANGO_SUPERUSER_EMAIL=root@example.com \
+		-e DJANGO_DEBUG=True \
+		books-v01
+
+And you can verify running something like:
+
+	echo '{"name": "My editorial"}' | http -a root:mypassword POST http://127.0.0.1:8020/books/api/editorial
+	
+	HTTP/1.1 201 Created
+	Allow: GET, POST, HEAD, OPTIONS
+	Connection: keep-alive
+	Content-Length: 30
+	Content-Type: application/json
+	Cross-Origin-Opener-Policy: same-origin
+	Date: Fri, 09 Jun 2023 22:16:31 GMT
+	Referrer-Policy: same-origin
+	Server: nginx/1.14.2
+	Vary: Accept, Cookie
+	X-Content-Type-Options: nosniff
+	X-Frame-Options: DENY
+	
+	{
+		"id": 1,
+		"name": "My editorial"
+	}
+
+
+
+
 
 ### How to use it? ###
 
