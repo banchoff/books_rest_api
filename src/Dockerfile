@@ -9,9 +9,9 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log \
 # Copy source and install dependencies
 RUN mkdir -p /opt/app/books
 RUN mkdir -p /opt/app/pip_cache
-COPY requirements.txt start-server.sh /opt/app/
+COPY books/requirements.txt start-server.sh /opt/app/
 RUN chmod +x /opt/app/start-server.sh
-COPY  /opt/app/books/
+COPY books /opt/app/books/
 WORKDIR /opt/app
 RUN pip install -r requirements.txt --cache-dir /opt/app/pip_cache
 RUN rm /opt/app/books/db.sqlite3

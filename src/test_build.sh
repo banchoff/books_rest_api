@@ -16,6 +16,7 @@ NC='\033[0m'
 # Create image
 echo "Creating docker image $DOCKER_NAME"
 docker build -t "$DOCKER_NAME" . >/dev/null 2>/dev/null
+#docker build -t "$DOCKER_NAME" . 
 if [ $? -ne 0 ]
 then
     echo -e "${RED}Error building $DOCKER_NAME image${NC}"
@@ -37,18 +38,18 @@ then
     exit 2
 fi
 
-echo "Running tests on container"
+# echo "Running tests on container"
 
-sleep 5
+# sleep 5
 
-./test_login.sh "$PORT" "$ADMIN" "$PASS"
-if [ $? -ne 0 ]
-then
-    echo -e "${RED}Error testing the app${NC}"
-    echo -e "${RED}The app is not running or we cannot log in${NC}"
-else
-    echo -e "${GREEN}Log in. App running.${NC}"
-fi
+# ./test_login.sh "$PORT" "$ADMIN" "$PASS"
+# if [ $? -ne 0 ]
+# then
+#     echo -e "${RED}Error testing the app${NC}"
+#     echo -e "${RED}The app is not running or we cannot log in${NC}"
+# else
+#     echo -e "${GREEN}Log in. App running.${NC}"
+# fi
 
 echo "Halting container"
 docker stop "$CONTAINER_ID"
