@@ -7,8 +7,6 @@ class Editorial(models.Model):
 
     def __str__(self):
         return self.name
-
-
     
 class Book(models.Model):
     title = models.CharField(max_length=150)
@@ -18,9 +16,6 @@ class Book(models.Model):
     
     def __str__(self):
         return f"{self.title} ({self.editorial.name})"
-
-
-
     
 class Author(models.Model):
     firstname = models.CharField(max_length=50)
