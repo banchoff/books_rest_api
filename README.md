@@ -13,7 +13,6 @@ See **src/books/requirements.txt**.
 
 For running directly with Django:
 
-	source ./src/bin/activate
 	cd src/books/
 	python3 manage.py runserver
 
@@ -27,7 +26,9 @@ You can also run it with docker:
 		-e DJANGO_DEBUG=True \
 		books-v01
 
-And you can verify running something like:
+Check **start-server.sh** for the number of Gunicorn workers.
+
+You can verify running something like:
 
 	echo '{"name": "My editorial"}' | http -a root:mypassword POST http://127.0.0.1:8020/books/api/editorial
 	
