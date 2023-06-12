@@ -14,7 +14,7 @@ RUN chmod +x /opt/app/start-server.sh
 COPY books /opt/app/books/
 WORKDIR /opt/app
 RUN pip install -r requirements.txt --cache-dir /opt/app/pip_cache
-RUN rm /opt/app/books/db.sqlite3
+RUN rm -f /opt/app/books/db.sqlite3
 RUN python3 /opt/app/books/manage.py makemigrations
 RUN python3 /opt/app/books/manage.py migrate
 RUN chown -R www-data:www-data /opt/app
