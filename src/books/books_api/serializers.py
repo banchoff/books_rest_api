@@ -13,10 +13,7 @@ class EditorialSerializer(serializers.ModelSerializer):
         fields = ["id", "name"]
 
 class BookSerializer(serializers.ModelSerializer):
-    #editorial = EditorialSerializer(read_only=True, many=False)
-    #authors = AuthorSerializer(read_only=True, many=True)
     class Meta:
         model = Book
-        fields = ["id", "title", "description", "pub_date", "editorial"]#, "authors"]
-        #extra_kwargs = {'editorial': {'required': False}}
+        fields = ["id", "title", "description", "pub_date", "editorial"]
         
